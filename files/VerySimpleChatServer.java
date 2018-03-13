@@ -32,8 +32,8 @@ public class VerySimpleChatServer {
 		public void run() {
 			String message;
 			try { 
-				while (true) {		
-					message = reader.readLine();
+				while ((message = reader.readLine())!= null) {		
+					//message = reader.readLine();
 					System.out.println("read " + message);
 					tellEveryone("user" + Thread.currentThread().getName() + ": " + message);			
 				}
